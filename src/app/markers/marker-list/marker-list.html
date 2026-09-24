@@ -1,0 +1,30 @@
+<mat-list class="marker-list">
+  <h3 matSubheader>Markers</h3>
+  @for (m of markers(); track m.id) {
+    <mat-list-item
+      class="marker-row"
+      [class.selected]="m.id === selectedId()"
+      (click)="select(m)"
+    >
+      <span matListItemTitle class="block truncate">{{ m.name }}</span>
+      <span matListItemLine class="text-(--mat-sys-on-surface-variant) tabular-nums">
+        {{ m.lon | coordinate }}, {{ m.lat | coordinate }}
+      </span>
+      <button
+        mat-icon-button
+        matListItemMeta
+        type="button"
+        aria-label="Delete {{ m.name }}"
+        (click)="remove(m); $event.stopPropagation()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+    @if (!$last) {
+      <mat-divider />
+    }
+  }
+</mat-list>
+@if (markers().length === 0) {
+  <p class="m-0 text-(--mat-sys-on-surface-variant)">No markers yet</p>
+}

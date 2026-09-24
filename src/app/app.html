@@ -1,0 +1,15 @@
+<mat-toolbar class="flex-none" color="primary">
+  <h1 class="m-0 [font:var(--mat-sys-title-large)]">Map markers</h1>
+</mat-toolbar>
+
+<div class="flex min-h-0 flex-1">
+  <main class="min-h-0 min-w-0 flex-1">
+    <app-marker-map />
+  </main>
+  <aside
+    class="box-border flex w-80 flex-col gap-4 overflow-y-auto border-l border-(--mat-sys-outline-variant) p-4"
+  >
+    <app-marker-list />
+    <app-marker-form />
+  </aside>
+</div>

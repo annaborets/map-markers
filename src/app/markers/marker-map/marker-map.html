@@ -1,0 +1,23 @@
+<div #mapTarget class="h-full w-full"></div>
+
+<div
+  #popupTarget
+  class="min-w-56 rounded-[var(--mat-sys-corner-medium,8px)] bg-(--mat-sys-surface) p-3 shadow-[var(--mat-sys-level2,0_4px_16px_rgb(0_0_0/25%))]"
+>
+  @if (selectedMarker(); as marker) {
+    <div class="[font:var(--mat-sys-title-small)]">{{ marker.name }}</div>
+    <div class="text-(--mat-sys-on-surface-variant) [font:var(--mat-sys-body-small)]">
+      {{ marker.lon | coordinate }}, {{ marker.lat | coordinate }}
+    </div>
+    <div class="mt-2 flex justify-end gap-1">
+      <button mat-button type="button" color="warn" (click)="deleteMarker(marker.id)">
+        <mat-icon>delete</mat-icon>
+        Delete
+      </button>
+      <button mat-button type="button" (click)="closePopup()">
+        <mat-icon>close</mat-icon>
+        Close
+      </button>
+    </div>
+  }
+</div>
