@@ -2,7 +2,10 @@
 
 Map marker CRUD on an interactive map — Angular 22 / NGXS / OpenLayers.
 
-A visual project overview — usage guide, architecture and design decisions — is in [`docs/index.html`](docs/index.html) (open it in a browser).
+A visual project overview — usage guide, architecture and design decisions — is at
+https://map-markers-teal.vercel.app/docs/ (source: [`public/docs/index.html`](public/docs/index.html)).
+
+Live app: https://map-markers-teal.vercel.app
 
 ## Prerequisites
 
